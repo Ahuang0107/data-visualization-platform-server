@@ -12,5 +12,10 @@ data class Element(
 
     val subItem: List<Element>? = null,
 
-    val generalTitle: GeneralTitleDataType? = null
+    val generalTitle: GeneralTitleDataType? = null,
+
+    val digitalCardFlipper: DigitalCardFlipperDateType? = null
+
 )
+
+

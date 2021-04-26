@@ -1,7 +1,6 @@
 package com.example.demo
 
-import com.example.demo.dto.Element
-import com.example.demo.dto.GeneralTitleDataType
+import com.example.demo.dto.*
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -9,6 +8,19 @@ import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+
+enum class Color {
+    SINGLE_IMAGE,
+    COLOR_BLOCK,
+    GENERAL_TITLE,
+    DIGITAL_CARD_FLIPPER,
+    STACKED_COLUMN_CHART,
+    MULTIPLE_X_AXES,
+    BUS_LINE,
+    DOUGHNUT_CHART_WITH_ROUNDED_CORNER,
+    BUBBLE_CHART,
+    FOLDER
+}
 
 const val SINGLE_IMAGE = "SingleImage"
 const val COLOR_BLOCK = "ColorBlock"
@@ -25,8 +37,8 @@ const val FOLDER = "folder"
 @RestController
 @CrossOrigin("http://localhost:4000")
 class DemoApplication {
-    @GetMapping("/hello")
-    fun hello(@RequestParam(value = "name", defaultValue = "World") name: String?): String? {
+    @GetMapping("/getData")
+    fun hello(): String? {
         val mapper = ObjectMapper()
         val element = listOf(
             Element(
@@ -39,6 +51,15 @@ class DemoApplication {
                 10,
                 subItem = listOf(
                     Element(
+                        "ca650a6d-91c0-4c3a-bedf-1efc7d3f7c28",
+                        COLOR_BLOCK,
+                        "色块图",
+                        700,
+                        91,
+                        20,
+                        10,
+                    ),
+                    Element(
                         "60077213-79ce-4eea-8c8c-6101a393d4cd",
                         FOLDER,
                         "文件夹",
@@ -48,14 +69,14 @@ class DemoApplication {
                         10,
                         subItem = listOf(
                             Element(
-                                "60077213-79ce-4eea-8c8c-6101a393d4cd",
+                                "ca53c183-1060-4dd7-9a96-08122f4bf764",
                                 GENERAL_TITLE,
                                 "通用标题",
                                 471,
                                 50,
                                 110,
                                 30,
-                                generalTitle = GeneralTitleDataType("BaaS 区块链可信数据大屏")
+                                generalTitle = GeneralTitleDataType("区域经济检测数据大屏")
                             ),
                             Element(
                                 "c00ea9c7-d25f-4616-bcab-84994aae9af3",
@@ -68,15 +89,6 @@ class DemoApplication {
                             ),
                         )
                     ),
-                    Element(
-                        "ca650a6d-91c0-4c3a-bedf-1efc7d3f7c28",
-                        COLOR_BLOCK,
-                        "色块图",
-                        700,
-                        91,
-                        20,
-                        10,
-                    )
                 )
             ),
             Element(
@@ -105,6 +117,13 @@ class DemoApplication {
                         70,
                         880,
                         20,
+                        digitalCardFlipper = DigitalCardFlipperDateType(
+                            content = "2984.10",
+                            title = DigitalCardFlipperTitle(
+                                content = "第一季度",
+                            ),
+                            suffix = DigitalCardFlipperSuffix("万")
+                        )
                     ),
                 )
             ),
@@ -134,6 +153,13 @@ class DemoApplication {
                         70,
                         1130,
                         20,
+                        digitalCardFlipper = DigitalCardFlipperDateType(
+                            content = "2330.56",
+                            title = DigitalCardFlipperTitle(
+                                content = "第二季度",
+                            ),
+                            suffix = DigitalCardFlipperSuffix("万")
+                        )
                     ),
                 )
             ),
@@ -163,6 +189,13 @@ class DemoApplication {
                         70,
                         1380,
                         20,
+                        digitalCardFlipper = DigitalCardFlipperDateType(
+                            content = "2278.42",
+                            title = DigitalCardFlipperTitle(
+                                content = "第三季度",
+                            ),
+                            suffix = DigitalCardFlipperSuffix("万")
+                        )
                     ),
                 )
             ),
@@ -192,6 +225,13 @@ class DemoApplication {
                         70,
                         1630,
                         20,
+                        digitalCardFlipper = DigitalCardFlipperDateType(
+                            content = "1920.78",
+                            title = DigitalCardFlipperTitle(
+                                content = "第三季度",
+                            ),
+                            suffix = DigitalCardFlipperSuffix("万")
+                        )
                     ),
                 )
             ),
