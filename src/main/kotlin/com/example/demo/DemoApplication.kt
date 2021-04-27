@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 enum class Color {
@@ -15,11 +14,12 @@ enum class Color {
     GENERAL_TITLE,
     DIGITAL_CARD_FLIPPER,
     STACKED_COLUMN_CHART,
+    BAR_WITH_BACKGROUND,
     MULTIPLE_X_AXES,
     BUS_LINE,
     DOUGHNUT_CHART_WITH_ROUNDED_CORNER,
     BUBBLE_CHART,
-    FOLDER
+    FOLDER,
 }
 
 const val SINGLE_IMAGE = "SingleImage"
@@ -27,6 +27,7 @@ const val COLOR_BLOCK = "ColorBlock"
 const val GENERAL_TITLE = "GeneralTitle"
 const val DIGITAL_CARD_FLIPPER = "DigitalCardFlipper"
 const val STACKED_COLUMN_CHART = "StackedColumnChart"
+const val BAR_WITH_BACKGROUND = "BarWithBackground"
 const val MULTIPLE_X_AXES = "MultipleXAxes"
 const val BUS_LINE = "BusLine"
 const val DOUGHNUT_CHART_WITH_ROUNDED_CORNER = "DoughnutChartWithRoundedCorner"
@@ -255,8 +256,8 @@ class DemoApplication {
                     ),
                     Element(
                         "82e1752f-b2e8-4a10-a158-7c7733d26f86",
-                        STACKED_COLUMN_CHART,
-                        "柱状图",
+                        BAR_WITH_BACKGROUND,
+                        "折线柱图",
                         400,
                         300,
                         25,

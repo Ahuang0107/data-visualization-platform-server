@@ -16,6 +16,10 @@ class CanvasServiceImpl : CanvasService {
         return canvasRepository.save(canvas)
     }
 
+    override fun getById(id: String): Mono<Canvas>? {
+        return canvasRepository.findById(id)
+    }
+
     override fun findByUserId(id: String): Mono<Canvas> {
         return canvasRepository.findByUserId(id)
     }
