@@ -2,6 +2,7 @@ package com.example.demo.dto
 
 data class DigitalCardFlipperDateType(
     val content: String? = null,
+    val size: Int = 24,
     val title: DigitalCardFlipperTitle? = null,
     val prefix: DigitalCardFlipperPrefix? = null,
     val suffix: DigitalCardFlipperSuffix? = null,

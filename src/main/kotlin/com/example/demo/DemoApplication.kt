@@ -120,6 +120,7 @@ class DemoApplication {
                         20,
                         digitalCardFlipper = DigitalCardFlipperDateType(
                             content = "2984.10",
+                            size = 16,
                             title = DigitalCardFlipperTitle(
                                 content = "第一季度",
                             ),
@@ -156,6 +157,7 @@ class DemoApplication {
                         20,
                         digitalCardFlipper = DigitalCardFlipperDateType(
                             content = "2330.56",
+                            size = 20,
                             title = DigitalCardFlipperTitle(
                                 content = "第二季度",
                             ),
@@ -192,8 +194,10 @@ class DemoApplication {
                         20,
                         digitalCardFlipper = DigitalCardFlipperDateType(
                             content = "2278.42",
+                            size = 24,
                             title = DigitalCardFlipperTitle(
                                 content = "第三季度",
+                                isTop = false,
                             ),
                             suffix = DigitalCardFlipperSuffix("万")
                         )
@@ -228,8 +232,9 @@ class DemoApplication {
                         20,
                         digitalCardFlipper = DigitalCardFlipperDateType(
                             content = "1920.78",
+                            size = 28,
                             title = DigitalCardFlipperTitle(
-                                content = "第三季度",
+                                content = "第四季度",
                             ),
                             suffix = DigitalCardFlipperSuffix("万")
                         )
