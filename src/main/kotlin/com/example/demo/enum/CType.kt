@@ -11,5 +11,5 @@ enum class CType {
     BUS_LINE,
     DOUGHNUT_CHART_WITH_ROUNDED_CORNER,
     BUBBLE_CHART,
-    FOLDER
+    FOLDER,
 }
