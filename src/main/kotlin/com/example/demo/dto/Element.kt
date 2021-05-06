@@ -1,8 +1,10 @@
 package com.example.demo.dto
 
+import com.example.demo.enum.CType
+
 data class Element(
     val primaryKey: String = "",
-    val type: String? = null,
+    val type: CType? = null,
     val name: String? = null,
 
     val width: Int? = null,
