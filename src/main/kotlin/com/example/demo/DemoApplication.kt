@@ -78,7 +78,11 @@ class DemoApplication {
                                 50,
                                 110,
                                 30,
-                                generalTitle = GeneralTitleDataType("区域经济检测数据大屏")
+                                generalTitle = GeneralTitleDataType(
+                                    "区域经济检测数据大屏",
+                                    "微软雅黑",
+                                    42
+                                )
                             ),
                             Element(
                                 "c00ea9c7-d25f-4616-bcab-84994aae9af3",
