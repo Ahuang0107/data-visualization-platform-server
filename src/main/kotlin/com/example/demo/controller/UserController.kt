@@ -42,8 +42,23 @@ class UserController {
      * 通过用户_id查找用户信息
      */
     @GetMapping("/id")
-    fun user(@RequestParam id: String): Mono<User> {
+    fun user(@RequestParam id: String): Mono<User>? {
         return userService.find(id)
+    }
+
+    /**
+     * 登录
+     */
+    @PostMapping
+    fun login(@RequestBody user: User): Mono<User>? {
+        return userService.login(user)
+    }
+    /**
+     * 注册
+     */
+    @PutMapping
+    fun register(@RequestBody user: User): Mono<User>? {
+        return userService.register(user)
     }
 
     /**

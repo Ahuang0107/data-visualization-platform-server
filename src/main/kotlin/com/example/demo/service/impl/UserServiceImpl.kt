@@ -13,12 +13,24 @@ class UserServiceImpl : UserService {
     @Autowired
     lateinit var userRepository: UserRepository
 
-    override fun find(id: String): Mono<User> {
+    override fun find(id: String): Mono<User>? {
         return userRepository.findById(id)
     }
 
     override fun list(): Flux<User> {
         return userRepository.findAll()
+    }
+
+    override fun login(user: User): Mono<User>? {
+        return user.username?.let {
+            user.password?.let { it1 ->
+                userRepository.findByUsernameAndPassword(it, it1)
+            }
+        }
+    }
+
+    override fun register(user: User): Mono<User>? {
+        return userRepository.save(user)
     }
 
     override fun create(user: User): Mono<User> {
