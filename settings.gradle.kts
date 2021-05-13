@@ -1,1 +1,1 @@
-rootProject.name = "demo"
+rootProject.name = "data-visualization-platform-server"
