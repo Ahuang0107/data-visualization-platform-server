@@ -1,6 +1,7 @@
 package com.example.demo.api.user.facade.impl
 
 import com.example.demo.api.user.facade.UserFacade
+import com.example.demo.base.util.generatorId
 import com.example.demo.module.user.entity.User
 import com.example.demo.module.user.service.UserService
 import org.springframework.stereotype.Service
@@ -12,6 +13,9 @@ class UserFacadeImpl(
     private val userService: UserService,
 ) : UserFacade {
     override fun create(user: User): User {
-        return userService.save(user)
+        return user.let {
+            it.id = generatorId()
+            userService.save(it)
+        }
     }
 }

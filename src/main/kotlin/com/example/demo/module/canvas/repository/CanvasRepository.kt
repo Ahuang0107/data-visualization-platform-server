@@ -2,6 +2,8 @@ package com.example.demo.module.canvas.repository
 
 import com.example.demo.module.canvas.entity.Canvas
 import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.stereotype.Repository
 
-interface CanvasRepository : MongoRepository<Canvas, String> {
+@Repository
+interface CanvasRepository : MongoRepository<Canvas, Long> {
 }
