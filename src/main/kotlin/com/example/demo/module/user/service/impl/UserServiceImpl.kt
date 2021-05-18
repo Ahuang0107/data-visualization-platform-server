@@ -12,4 +12,8 @@ class UserServiceImpl(
     override fun save(user: User): User {
         return repository.save(user)
     }
+
+    override fun findByUsername(username: String): User? {
+        return repository.findByUsername(username)
+    }
 }
