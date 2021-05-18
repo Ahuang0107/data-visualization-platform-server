@@ -1,6 +1,5 @@
 package com.example.demo.entity
 
-import com.example.demo.dto.Element
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
@@ -9,8 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document
 class User {
     @Id
     var id: String? = null
-    var username: String? = null
-    var password: String? = null
+    var username: String = ""
+    var password: String = ""
 
     override fun toString(): String {
         return ObjectMapper().writeValueAsString(this)

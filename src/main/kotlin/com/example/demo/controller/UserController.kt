@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @RestController
-@CrossOrigin("http://localhost:4000")
+@CrossOrigin("http://localhost:4000", "http://localhost:3000")
 @RequestMapping("/api/user")
 class UserController {
     @Autowired

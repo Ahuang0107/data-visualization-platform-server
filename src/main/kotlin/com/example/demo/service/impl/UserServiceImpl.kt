@@ -30,6 +30,9 @@ class UserServiceImpl : UserService {
     }
 
     override fun register(user: User): Mono<User>? {
+        userRepository.getByUsername(user.username)?.also {
+            throw RuntimeException("用户名已存在")
+        }
         return userRepository.save(user)
     }
 

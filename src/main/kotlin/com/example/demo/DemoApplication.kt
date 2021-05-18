@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
 @RestController
-@CrossOrigin("http://localhost:4000")
+@CrossOrigin("http://localhost:4000", "http://localhost:3000")
 class DemoApplication {
     @GetMapping("/getData")
     fun hello(): String? {

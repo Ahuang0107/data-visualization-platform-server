@@ -12,7 +12,8 @@ class CanvasServiceImpl : CanvasService {
     @Autowired
     lateinit var canvasRepository: CanvasRepository
 
-    override fun create(canvas: Canvas): Mono<Canvas> {
+    override fun create(userId: String, canvas: Canvas): Mono<Canvas> {
+        canvas.userId = userId
         return canvasRepository.save(canvas)
     }
 

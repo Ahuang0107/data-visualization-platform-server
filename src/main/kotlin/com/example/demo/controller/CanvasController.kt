@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Mono
 
 @RestController
-@CrossOrigin("http://localhost:4000")
+@CrossOrigin("http://localhost:4000", "http://localhost:3000")
 @RequestMapping("/api/canvas")
 class CanvasController {
     @Autowired
@@ -16,9 +16,12 @@ class CanvasController {
     /**
      * 新增大屏应用项目
      */
-    @PostMapping("/")
-    fun create(@RequestBody canvas: Canvas): Mono<Canvas> {
-        return canvasService.create(canvas)
+    @PostMapping("/{userId}")
+    fun create(
+        @PathVariable userId: String,
+        @RequestBody canvas: Canvas
+    ): Mono<Canvas> {
+        return canvasService.create(userId, canvas)
     }
 
     /**
