@@ -1,6 +1,6 @@
-package com.example.demo.enum
+package com.example.demo.module.common.enums
 
-enum class CType {
+enum class ElementType {
     SINGLE_IMAGE,
     COLOR_BLOCK,
     GENERAL_TITLE,

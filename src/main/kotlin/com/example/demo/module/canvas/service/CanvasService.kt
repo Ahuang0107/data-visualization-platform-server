@@ -1,6 +1,6 @@
-package com.example.demo.service
+package com.example.demo.module.canvas.service
 
-import com.example.demo.entity.Canvas
+import com.example.demo.module.canvas.entity.Canvas
 import reactor.core.publisher.Mono
 
 interface CanvasService {

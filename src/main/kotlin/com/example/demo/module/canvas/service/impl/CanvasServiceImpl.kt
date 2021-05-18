@@ -1,8 +1,8 @@
-package com.example.demo.service.impl
+package com.example.demo.module.canvas.service.impl
 
-import com.example.demo.dao.CanvasRepository
-import com.example.demo.entity.Canvas
-import com.example.demo.service.CanvasService
+import com.example.demo.module.canvas.entity.Canvas
+import com.example.demo.module.canvas.repository.CanvasRepository
+import com.example.demo.module.canvas.service.CanvasService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono

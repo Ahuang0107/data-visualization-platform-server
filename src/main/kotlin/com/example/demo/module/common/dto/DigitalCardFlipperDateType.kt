@@ -1,4 +1,4 @@
-package com.example.demo.dto
+package com.example.demo.module.common.dto
 
 data class DigitalCardFlipperDateType(
     val content: String? = null,

@@ -1,6 +1,5 @@
-package com.example.demo.entity
+package com.example.demo.module.user.entity
 
-import com.example.demo.dto.Element
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document

@@ -1,4 +1,4 @@
-package com.example.demo.dto
+package com.example.demo.module.common.dto
 
 data class Property(
     val width: Int? = null,

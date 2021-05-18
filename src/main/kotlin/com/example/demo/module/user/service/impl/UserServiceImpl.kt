@@ -1,8 +1,8 @@
-package com.example.demo.service.impl
+package com.example.demo.module.user.service.impl
 
-import com.example.demo.dao.UserRepository
-import com.example.demo.entity.User
-import com.example.demo.service.UserService
+import com.example.demo.module.user.entity.User
+import com.example.demo.module.user.repository.UserRepository
+import com.example.demo.module.user.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux

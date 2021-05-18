@@ -1,7 +1,7 @@
-package com.example.demo.controller
+package com.example.demo.api.canvas.controller
 
-import com.example.demo.entity.Canvas
-import com.example.demo.service.CanvasService
+import com.example.demo.module.canvas.entity.Canvas
+import com.example.demo.module.canvas.service.CanvasService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Mono

@@ -1,6 +1,6 @@
-package com.example.demo.service
+package com.example.demo.module.user.service
 
-import com.example.demo.entity.User
+import com.example.demo.module.user.entity.User
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 

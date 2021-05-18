@@ -1,10 +1,10 @@
-package com.example.demo.dto
+package com.example.demo.module.common.dto
 
-import com.example.demo.enum.CType
+import com.example.demo.module.common.enums.ElementType
 
 data class Element(
     val primaryKey: String = "",
-    val type: CType? = null,
+    val type: ElementType? = null,
     val name: String? = null,
 
     val width: Int? = null,
