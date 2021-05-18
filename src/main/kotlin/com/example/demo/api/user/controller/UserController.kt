@@ -1,11 +1,11 @@
 package com.example.demo.api.user.controller
 
 import com.example.demo.api.user.facade.UserFacade
+import com.example.demo.base.dto.AppResponse
 import com.example.demo.base.property.SystemConst
+import com.example.demo.base.util.successResult
 import com.example.demo.module.user.entity.User
 import org.springframework.web.bind.annotation.*
-import reactor.core.publisher.Flux
-import reactor.core.publisher.Mono
 
 @RestController
 @CrossOrigin("http://localhost:4000")
@@ -14,18 +14,10 @@ class UserController(
     private val facade: UserFacade,
 ) {
     /**
-     * 查找所有用户信息
-     */
-    @GetMapping("/list")
-    fun listUser(): Flux<User> {
-        return facade.list()
-    }
-
-    /**
      * 注册
      */
     @PutMapping
-    fun register(@RequestBody user: User): Mono<User>? {
-        return facade.register(user)
+    fun register(@RequestBody user: User): AppResponse<User> {
+        return facade.create(user).successResult()
     }
 }
