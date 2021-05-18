@@ -1,13 +1,10 @@
-package com.example.demo.module.user.service
+package com.example.demo.api.user.facade
 
 import com.example.demo.module.user.entity.User
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
-/**
- * 用户信息相关服务
- */
-interface UserService {
+interface UserFacade {
     /**
      * 通过用户_id获取用户信息
      */

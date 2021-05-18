@@ -1,41 +1,40 @@
-package com.example.demo.module.user.service.impl
+package com.example.demo.api.user.facade.impl
 
+import com.example.demo.api.user.facade.UserFacade
 import com.example.demo.module.user.entity.User
-import com.example.demo.module.user.repository.UserRepository
 import com.example.demo.module.user.service.UserService
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Service
-class UserServiceImpl(
-    private val repository: UserRepository,
-) : UserService {
+@Transactional
+class UserFacadeImpl(
+    private val userService: UserService,
+) : UserFacade {
     override fun find(id: String): Mono<User>? {
-        return repository.findById(id)
+        return userService.find(id)
     }
 
     override fun list(): Flux<User> {
-        return repository.findAll()
+        return userService.list()
     }
 
     override fun login(user: User): Mono<User>? {
-        return user.username?.let {
-            user.password?.let { it1 ->
-                repository.findByUsernameAndPassword(it, it1)
-            }
-        }
+        return userService.login(user)
     }
 
     override fun register(user: User): Mono<User>? {
-        return repository.save(user)
+        return userService.register(user)
     }
 
     override fun create(user: User): Mono<User> {
-        return repository.save(user)
+        return userService.create(user)
     }
 
     override fun delete(id: String): Mono<Void> {
-        return repository.deleteById(id)
+        return userService.delete(id)
     }
+
 }
