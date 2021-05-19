@@ -1,5 +1,7 @@
 package com.example.demo.api.user.facade.impl
 
+import com.example.demo.api.user.dto.LoginRequest
+import com.example.demo.api.user.exception.IncorrectLoginInfoException
 import com.example.demo.api.user.facade.UserFacade
 import com.example.demo.base.util.generatorId
 import com.example.demo.module.user.entity.User
@@ -21,5 +23,18 @@ class UserFacadeImpl(
             it.id = generatorId()
             userService.save(it).id
         }
+    }
+
+    override fun login(request: LoginRequest): Long {
+        //判断是否存在用户名
+        val userEntity = userService.findByUsername(request.username)
+            ?: throw IncorrectLoginInfoException()
+
+        //判断用户名对应密码是否正确
+        if (userEntity.password != request.password) {
+            throw IncorrectLoginInfoException()
+        }
+
+        return userEntity.id
     }
 }

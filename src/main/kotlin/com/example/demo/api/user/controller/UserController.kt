@@ -1,5 +1,6 @@
 package com.example.demo.api.user.controller
 
+import com.example.demo.api.user.dto.LoginRequest
 import com.example.demo.api.user.facade.UserFacade
 import com.example.demo.base.dto.AppResponse
 import com.example.demo.base.property.SystemConst
@@ -19,5 +20,13 @@ class UserController(
     @PutMapping
     fun register(@RequestBody user: User): AppResponse<Long> {
         return facade.create(user).successResult()
+    }
+
+    /**
+     * 登录
+     */
+    @PostMapping("/login")
+    fun login(@RequestBody request: LoginRequest): AppResponse<Long> {
+        return facade.login(request).successResult()
     }
 }
