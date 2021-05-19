@@ -18,7 +18,7 @@ class UserController(
      * 注册
      */
     @PutMapping
-    fun register(@RequestBody user: User): AppResponse<Long> {
+    fun register(@RequestBody user: User): AppResponse<String> {
         return facade.create(user).successResult()
     }
 
@@ -26,7 +26,7 @@ class UserController(
      * 登录
      */
     @PostMapping("/login")
-    fun login(@RequestBody request: LoginRequest): AppResponse<Long> {
+    fun login(@RequestBody request: LoginRequest): AppResponse<String> {
         return facade.login(request).successResult()
     }
 }

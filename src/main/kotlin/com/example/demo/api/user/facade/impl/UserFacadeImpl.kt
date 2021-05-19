@@ -15,17 +15,17 @@ import org.springframework.transaction.annotation.Transactional
 class UserFacadeImpl(
     private val userService: UserService,
 ) : UserFacade {
-    override fun create(user: User): Long {
+    override fun create(user: User): String {
         userService.findByUsername(user.username)?.also {
             throw UserExistedException("该用户名已被注册")
         }
         return user.let {
             it.id = generatorId()
             userService.save(it).id
-        }
+        }.toString()
     }
 
-    override fun login(request: LoginRequest): Long {
+    override fun login(request: LoginRequest): String {
         //判断是否存在用户名
         val userEntity = userService.findByUsername(request.username)
             ?: throw IncorrectLoginInfoException()
@@ -35,6 +35,6 @@ class UserFacadeImpl(
             throw IncorrectLoginInfoException()
         }
 
-        return userEntity.id
+        return userEntity.id.toString()
     }
 }
