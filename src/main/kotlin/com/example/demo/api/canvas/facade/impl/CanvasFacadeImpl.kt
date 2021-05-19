@@ -30,4 +30,8 @@ class CanvasFacadeImpl(
             it.toInfo()
         }
     }
+
+//    override fun getDetail(id: Long): List<CanvasInfo> {
+//        TODO("Not yet implemented")
+//    }
 }

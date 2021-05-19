@@ -28,7 +28,7 @@ class CanvasController(
      * 根据用户 ID 获取数据大屏项目列表
      */
     @GetMapping("/list")
-    fun getCanvasList(@RequestBody request: CanvasListRequest): AppResponse<List<CanvasInfo>> {
+    fun getCanvasList(request: CanvasListRequest): AppResponse<List<CanvasInfo>> {
         return facade.list(request).successResult()
     }
 
@@ -39,4 +39,9 @@ class CanvasController(
     fun create(@RequestBody request: CanvasCreateRequest): AppResponse<Canvas> {
         return facade.create(request).successResult()
     }
+
+//    @GetMapping("/{id}")
+//    fun getDetail(@PathVariable id: String): AppResponse<Canvas> {
+//        TODO()
+//    }
 }

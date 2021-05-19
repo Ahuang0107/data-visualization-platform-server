@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document
 data class Canvas(
     @Id
-    var id: Long = 0L,
+    var id: String = "",
     var userId: String? = null,
     var property: CanvasProperty? = null,
     var elements: List<Element>? = emptyList(),
