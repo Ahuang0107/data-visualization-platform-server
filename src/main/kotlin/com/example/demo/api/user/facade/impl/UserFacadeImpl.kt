@@ -13,13 +13,13 @@ import org.springframework.transaction.annotation.Transactional
 class UserFacadeImpl(
     private val userService: UserService,
 ) : UserFacade {
-    override fun create(user: User): User {
+    override fun create(user: User): Long {
         userService.findByUsername(user.username)?.also {
             throw UserExistedException("该用户名已被注册")
         }
         return user.let {
             it.id = generatorId()
-            userService.save(it)
+            userService.save(it).id
         }
     }
 }

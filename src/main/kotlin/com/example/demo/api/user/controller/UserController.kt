@@ -17,7 +17,7 @@ class UserController(
      * 注册
      */
     @PutMapping
-    fun register(@RequestBody user: User): AppResponse<User> {
+    fun register(@RequestBody user: User): AppResponse<Long> {
         return facade.create(user).successResult()
     }
 }
