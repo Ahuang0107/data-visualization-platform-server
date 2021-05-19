@@ -8,4 +8,5 @@ import com.example.demo.module.canvas.entity.Canvas
 interface CanvasService {
     fun create(canvas: Canvas): Canvas
     fun findByUserId(userId: String): List<Canvas>
+    fun getById(id: String): Canvas
 }

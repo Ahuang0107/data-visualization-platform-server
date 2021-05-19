@@ -40,8 +40,8 @@ class CanvasController(
         return facade.create(request).successResult()
     }
 
-//    @GetMapping("/{id}")
-//    fun getDetail(@PathVariable id: String): AppResponse<Canvas> {
-//        TODO()
-//    }
+    @GetMapping("/{id}")
+    fun getDetail(@PathVariable id: String): AppResponse<Canvas> {
+        return facade.getDetail(id).successResult()
+    }
 }

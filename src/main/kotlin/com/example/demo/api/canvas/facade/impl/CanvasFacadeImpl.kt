@@ -31,7 +31,7 @@ class CanvasFacadeImpl(
         }
     }
 
-//    override fun getDetail(id: Long): List<CanvasInfo> {
-//        TODO("Not yet implemented")
-//    }
+    override fun getDetail(id: String): Canvas {
+        return canvasService.getById(id)
+    }
 }

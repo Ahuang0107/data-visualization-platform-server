@@ -8,5 +8,5 @@ import com.example.demo.module.canvas.entity.Canvas
 interface CanvasFacade {
     fun create(request: CanvasCreateRequest): Canvas
     fun list(request: CanvasListRequest): List<CanvasInfo>
-//    fun getDetail(id: Long): List<CanvasInfo>
+    fun getDetail(id: String): Canvas
 }

@@ -16,4 +16,8 @@ class CanvasServiceImpl(
     override fun findByUserId(userId: String): List<Canvas> {
         return repository.findByUserId(userId)
     }
+
+    override fun getById(id: String): Canvas {
+        return repository.findById(id).get()
+    }
 }
