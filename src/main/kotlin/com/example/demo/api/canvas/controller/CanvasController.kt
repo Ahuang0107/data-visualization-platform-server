@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@CrossOrigin("http://localhost:4000")
+@CrossOrigin
 @RequestMapping(SystemConst.API_PREFIX + "/canvas")
 class CanvasController(
     private val facade: CanvasFacade,

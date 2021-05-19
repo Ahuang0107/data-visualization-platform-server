@@ -9,7 +9,7 @@ import com.example.demo.module.user.entity.User
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@CrossOrigin("http://localhost:4000")
+@CrossOrigin
 @RequestMapping(SystemConst.API_PREFIX + "/user")
 class UserController(
     private val facade: UserFacade,
