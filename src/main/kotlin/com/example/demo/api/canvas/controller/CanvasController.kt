@@ -1,6 +1,7 @@
 package com.example.demo.api.canvas.controller
 
 import com.example.demo.api.canvas.dto.CanvasCreateRequest
+import com.example.demo.api.canvas.dto.CanvasInfo
 import com.example.demo.api.canvas.dto.CanvasListRequest
 import com.example.demo.api.canvas.facade.CanvasFacade
 import com.example.demo.base.dto.AppResponse
@@ -27,7 +28,7 @@ class CanvasController(
      * 根据用户 ID 获取数据大屏项目列表
      */
     @GetMapping("/list")
-    fun getCanvasList(@RequestBody request: CanvasListRequest): AppResponse<List<Canvas>> {
+    fun getCanvasList(@RequestBody request: CanvasListRequest): AppResponse<List<CanvasInfo>> {
         return facade.list(request).successResult()
     }
 

@@ -1,9 +1,11 @@
 package com.example.demo.api.canvas.facade.impl
 
 import com.example.demo.api.canvas.dto.CanvasCreateRequest
+import com.example.demo.api.canvas.dto.CanvasInfo
 import com.example.demo.api.canvas.dto.CanvasListRequest
+import com.example.demo.api.canvas.dto.converter.toEntity
+import com.example.demo.api.canvas.dto.converter.toInfo
 import com.example.demo.api.canvas.facade.CanvasFacade
-import com.example.demo.api.user.dto.converter.toEntity
 import com.example.demo.base.util.generatorId
 import com.example.demo.module.canvas.entity.Canvas
 import com.example.demo.module.canvas.service.CanvasService
@@ -22,7 +24,10 @@ class CanvasFacadeImpl(
         }
     }
 
-    override fun list(request: CanvasListRequest): List<Canvas> {
-        return canvasService.findByUserId(request.userId)
+    override fun list(request: CanvasListRequest): List<CanvasInfo> {
+        //todo 这里浪费了很多性能，需要优化
+        return canvasService.findByUserId(request.userId).map {
+            it.toInfo()
+        }
     }
 }

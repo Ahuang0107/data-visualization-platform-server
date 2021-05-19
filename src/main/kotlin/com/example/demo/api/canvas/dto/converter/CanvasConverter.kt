@@ -1,6 +1,7 @@
-package com.example.demo.api.user.dto.converter
+package com.example.demo.api.canvas.dto.converter
 
 import com.example.demo.api.canvas.dto.CanvasCreateRequest
+import com.example.demo.api.canvas.dto.CanvasInfo
 import com.example.demo.module.canvas.entity.Canvas
 import org.mapstruct.Mapper
 import org.mapstruct.factory.Mappers
@@ -14,7 +15,12 @@ interface CanvasConverter {
     }
 
     fun toEntity(source: CanvasCreateRequest): Canvas
+
+    fun toInfo(source: Canvas): CanvasInfo
 }
 
 fun CanvasCreateRequest.toEntity(): Canvas =
     CanvasConverter.INSTANCE.toEntity(this)
+
+fun Canvas.toInfo(): CanvasInfo =
+    CanvasConverter.INSTANCE.toInfo(this)
