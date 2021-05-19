@@ -1,9 +1,11 @@
 package com.example.demo.api.canvas.controller
 
-import com.example.demo.api.canvas.dto.CreateRequest
+import com.example.demo.api.canvas.dto.CanvasCreateRequest
+import com.example.demo.api.canvas.dto.CanvasListRequest
 import com.example.demo.api.canvas.facade.CanvasFacade
 import com.example.demo.base.dto.AppResponse
 import com.example.demo.base.property.SystemConst
+import com.example.demo.base.util.successResult
 import com.example.demo.module.canvas.entity.Canvas
 import org.springframework.web.bind.annotation.*
 
@@ -22,10 +24,18 @@ class CanvasController(
     }
 
     /**
+     * 根据用户 ID 获取数据大屏项目列表
+     */
+    @GetMapping("/list")
+    fun getCanvasList(@RequestBody request: CanvasListRequest): AppResponse<List<Canvas>> {
+        return facade.list(request).successResult()
+    }
+
+    /**
      * 创建数据大屏项目
      */
     @PostMapping
-    fun create(@RequestBody request: CreateRequest): AppResponse<Canvas> {
-        TODO()
+    fun create(@RequestBody request: CanvasCreateRequest): AppResponse<Canvas> {
+        return facade.create(request).successResult()
     }
 }

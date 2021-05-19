@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface CanvasRepository : MongoRepository<Canvas, Long> {
+    fun findByUserId(userId: String): List<Canvas>
 }

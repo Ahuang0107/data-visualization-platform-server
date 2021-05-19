@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.4.32"
 	kotlin("plugin.spring") version "1.4.32"
+	id("org.jetbrains.kotlin.kapt") version "1.4.31"
 }
 
 group = "com.example"
@@ -23,6 +24,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
 	implementation("com.google.code.gson:gson:2.8.6")
+
+	implementation("org.mapstruct:mapstruct:1.4.2.Final")
+
+	kapt("org.mapstruct:mapstruct-processor:1.4.2.Final")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
