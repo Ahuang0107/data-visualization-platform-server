@@ -19,6 +19,10 @@ data class Element(
     val digitalCardFlipper: DigitalCardFlipperDateType? = null,
 
     val barWithBackground: BarWithBackgroundDataType? = null,
+
+    val multipleXAxes: MultipleXAxesDataType? = null,
+
+    val doughnutChart: DoughnutChartDataType? = null,
 )
 
 

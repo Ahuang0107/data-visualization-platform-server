@@ -292,7 +292,7 @@ class CanvasController(
                 ),
                 Element(
                     "54ed2768-84bb-4ed2-b3e3-6336491e45b9",
-                    ElementType.BUS_LINE,
+                    ElementType.BUS_LINE_MAP,
                     "香港18区人口密度图",
                     800,
                     800,
