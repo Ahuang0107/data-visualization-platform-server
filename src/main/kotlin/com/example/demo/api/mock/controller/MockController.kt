@@ -56,4 +56,46 @@ class MockController {
             ),
         ).successResult()
     }
+
+    @GetMapping("/getPopulationCensusData2")
+    fun getPopulationCensusData2(): AppResponse<List<PopulationCensus>> {
+        return listOf(
+            PopulationCensus(
+                year = "第一季度",
+                data = PopulationNum(
+                    total = 12,
+                    male = 88,
+                    female = 12,
+                    radio = 105.07,
+                )
+            ),
+            PopulationCensus(
+                year = "第二季度",
+                data = PopulationNum(
+                    total = 15,
+                    male = 56,
+                    female = 34,
+                    radio = 104.90,
+                )
+            ),
+            PopulationCensus(
+                year = "第三季度",
+                data = PopulationNum(
+                    total = 13,
+                    male = 78,
+                    female = 32,
+                    radio = 106.30,
+                )
+            ),
+            PopulationCensus(
+                year = "第四季度",
+                data = PopulationNum(
+                    total = 7,
+                    male = 77,
+                    female = 9,
+                    radio = 106.6,
+                )
+            ),
+        ).successResult()
+    }
 }
