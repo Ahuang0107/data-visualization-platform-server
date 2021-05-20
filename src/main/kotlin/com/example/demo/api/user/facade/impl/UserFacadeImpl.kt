@@ -4,7 +4,7 @@ import com.example.demo.api.user.dto.LoginRequest
 import com.example.demo.api.user.exception.IncorrectLoginInfoException
 import com.example.demo.api.user.facade.UserFacade
 import com.example.demo.base.util.generatorId
-import com.example.demo.module.user.entity.User
+import com.example.demo.module.user.entity.UserEntity
 import com.example.demo.module.user.exception.UserExistedException
 import com.example.demo.module.user.service.UserService
 import org.springframework.stereotype.Service
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional
 class UserFacadeImpl(
     private val userService: UserService,
 ) : UserFacade {
-    override fun create(user: User): String {
+    override fun create(user: UserEntity): String {
         userService.findByUsername(user.username)?.also {
             throw UserExistedException("该用户名已被注册")
         }

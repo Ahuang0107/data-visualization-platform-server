@@ -5,7 +5,7 @@ import com.example.demo.api.user.facade.UserFacade
 import com.example.demo.base.dto.AppResponse
 import com.example.demo.base.property.SystemConst
 import com.example.demo.base.util.successResult
-import com.example.demo.module.user.entity.User
+import com.example.demo.module.user.entity.UserEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -18,7 +18,7 @@ class UserController(
      * 注册
      */
     @PutMapping
-    fun register(@RequestBody user: User): AppResponse<String> {
+    fun register(@RequestBody user: UserEntity): AppResponse<String> {
         return facade.create(user).successResult()
     }
 

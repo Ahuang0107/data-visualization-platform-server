@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.io.Serializable
 
-@Document
+@Document(collection = "canvas")
 data class CanvasEntity(
     @Id
     var id: String = "",
