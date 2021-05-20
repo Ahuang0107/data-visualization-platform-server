@@ -1,7 +1,7 @@
 package com.example.demo.module.common.dto
 
 data class MultipleXAxesDataType(
-    val xLabelList: List<String>? = emptyList(),
+    val category: List<String>? = emptyList(),
     val series: List<Series>? = emptyList()
 )
 
