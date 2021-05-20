@@ -16,8 +16,9 @@ data class Element(
 
     val generalTitle: GeneralTitleDataType? = null,
 
-    val digitalCardFlipper: DigitalCardFlipperDateType? = null
+    val digitalCardFlipper: DigitalCardFlipperDateType? = null,
 
+    val barWithBackground: BarWithBackgroundDataType? = null,
 )
 
 
