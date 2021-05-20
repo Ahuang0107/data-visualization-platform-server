@@ -1,6 +1,6 @@
 package com.example.demo.module.canvas.service.impl
 
-import com.example.demo.module.canvas.entity.Canvas
+import com.example.demo.module.canvas.entity.CanvasEntity
 import com.example.demo.module.canvas.repository.CanvasRepository
 import com.example.demo.module.canvas.service.CanvasService
 import org.springframework.stereotype.Service
@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service
 class CanvasServiceImpl(
     private val repository: CanvasRepository,
 ) : CanvasService {
-    override fun create(canvas: Canvas): Canvas {
+    override fun save(canvas: CanvasEntity): CanvasEntity {
         return repository.save(canvas)
     }
 
-    override fun findByUserId(userId: String): List<Canvas> {
+    override fun findByUserId(userId: String): List<CanvasEntity> {
         return repository.findByUserId(userId)
     }
 
-    override fun getById(id: String): Canvas {
+    override fun getById(id: String): CanvasEntity {
         return repository.findById(id).get()
     }
 }

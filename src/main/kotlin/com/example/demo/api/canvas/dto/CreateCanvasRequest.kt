@@ -1,14 +1,9 @@
-package com.example.demo.module.canvas.entity
+package com.example.demo.api.canvas.dto
 
 import com.example.demo.module.common.dto.CanvasProperty
 import com.example.demo.module.common.dto.Element
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
 
-@Document
-data class Canvas(
-    @Id
-    var id: String = "",
+data class CreateCanvasRequest(
     var userId: String? = null,
     var property: CanvasProperty? = null,
     var elements: List<Element>? = emptyList(),

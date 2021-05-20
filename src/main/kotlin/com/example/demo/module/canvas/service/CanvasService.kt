@@ -1,12 +1,12 @@
 package com.example.demo.module.canvas.service
 
-import com.example.demo.module.canvas.entity.Canvas
+import com.example.demo.module.canvas.entity.CanvasEntity
 
 /**
  * 数据大屏项目信息相关服务
  */
 interface CanvasService {
-    fun create(canvas: Canvas): Canvas
-    fun findByUserId(userId: String): List<Canvas>
-    fun getById(id: String): Canvas
+    fun save(canvas: CanvasEntity): CanvasEntity
+    fun findByUserId(userId: String): List<CanvasEntity>
+    fun getById(id: String): CanvasEntity
 }

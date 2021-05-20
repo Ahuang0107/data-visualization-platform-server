@@ -1,15 +1,17 @@
 package com.example.demo.api.canvas.controller
 
-import com.example.demo.api.canvas.dto.CanvasCreateRequest
 import com.example.demo.api.canvas.dto.CanvasInfo
 import com.example.demo.api.canvas.dto.CanvasListRequest
+import com.example.demo.api.canvas.dto.CreateCanvasRequest
+import com.example.demo.api.canvas.dto.SaveCanvasRequest
 import com.example.demo.api.canvas.facade.CanvasFacade
 import com.example.demo.base.dto.AppResponse
 import com.example.demo.base.property.SystemConst
 import com.example.demo.base.util.successResult
-import com.example.demo.module.canvas.entity.Canvas
+import com.example.demo.module.canvas.entity.CanvasEntity
 import com.example.demo.module.common.dto.*
 import com.example.demo.module.common.enums.ElementType
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -22,8 +24,8 @@ class CanvasController(
      * 获取假数据（测试）
      */
     @GetMapping("/getMockCanvasData")
-    fun getMockCanvasData(): AppResponse<Canvas> {
-        return Canvas().let {
+    fun getMockCanvasData(): AppResponse<CanvasEntity> {
+        return CanvasEntity().let {
             it.property = CanvasProperty()
             it.userId = "6888121471666240980"
             it.elements = listOf(
@@ -361,7 +363,7 @@ class CanvasController(
     }
 
     /**
-     * 根据用户 ID 获取数据大屏项目列表
+     * 根据用户 ID 获取数据大屏项目简略信息列表
      */
     @GetMapping("/list")
     fun getCanvasList(request: CanvasListRequest): AppResponse<List<CanvasInfo>> {
@@ -372,12 +374,26 @@ class CanvasController(
      * 创建数据大屏项目
      */
     @PostMapping
-    fun create(@RequestBody request: CanvasCreateRequest): AppResponse<Canvas> {
+    fun createCanvas(@RequestBody request: CreateCanvasRequest): AppResponse<CanvasEntity> {
         return facade.create(request).successResult()
     }
 
+    /**
+     * 更新数据大屏项目
+     */
+    @PutMapping("/{id}")
+    fun updateCanvas(
+        @PathVariable id: String,
+        @Validated @RequestBody request: SaveCanvasRequest
+    ): AppResponse<CanvasEntity> {
+        return facade.update(id, request).successResult()
+    }
+
+    /**
+     * 获取数据大屏项目详细信息
+     */
     @GetMapping("/{id}")
-    fun getDetail(@PathVariable id: String): AppResponse<Canvas> {
+    fun getDetail(@PathVariable id: String): AppResponse<CanvasEntity> {
         return facade.getDetail(id).successResult()
     }
 }
